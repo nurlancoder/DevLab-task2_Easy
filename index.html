@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="az">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SAYN</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <div id="start-screen" class="screen">
+            <div class="logo">
+                <i class="fas fa-question-circle"></i>
+            </div>
+            <h1>SAYN</h1>
+            <p>Biliklərinizi yoxlayın!</p>
+            <div class="category-selector">
+                <label for="category">Kateqoriya seçin:</label>
+                <select id="category" class="select-category">
+                    <option value="all">Bütün Kateqoriyalar</option>
+                    <option value="html">HTML</option>
+                    <option value="css">CSS</option>
+                    <option value="javascript">JavaScript</option>
+                </select>
+            </div>
+            <button id="start-btn" class="btn">
+                <i class="fas fa-play"></i>
+                Başla
+            </button>
+        </div>
+        
+        <div id="quiz-screen" class="screen hidden">
+            <div class="quiz-header">
+                <div class="progress-container">
+                    <div class="progress-text">
+                        Sual <span id="current-question">1</span> / <span id="total-questions">6</span>
+                    </div>
+                    <div class="progress-bar-container">
+                        <div id="progress-bar"></div>
+                    </div>
+                </div>
+                <div id="timer-container">
+                    <i class="fas fa-clock"></i>
+                    <span id="timer">15</span>
+                </div>
+            </div>
+            
+            <div id="question-container">
+                <h2 id="question-text">Sual mətni burada görünəcək</h2>
+                <div id="options-container"></div>
+            </div>
+            
+            <div class="button-container">
+                <button id="next-btn" class="btn hidden">
+                    Növbəti Sual
+                    <i class="fas fa-arrow-right"></i>
+                </button>
+            </div>
+        </div>
+        
+        <div id="results-screen" class="screen hidden">
+            <div class="result-icon">
+                <i class="fas fa-trophy"></i>
+            </div>
+            <h1>Test Tamamlandı!</h1>
+            <div class="result-info">
+                <p>Nəticəniz: <span id="score">0</span>/<span id="max-score">6</span></p>
+                <div id="score-percentage"></div>
+                <div class="high-score">
+                    <i class="fas fa-star"></i>
+                    Ən Yüksək Nəticə: <span id="high-score">0</span>
+                </div>
+            </div>
+            <div class="result-message" id="result-message"></div>
+            <div class="result-buttons">
+                <button id="restart-btn" class="btn">
+                    <i class="fas fa-redo"></i>
+                    Yenidən Başla
+                </button>
+                <button id="share-btn" class="btn btn-secondary">
+                    <i class="fas fa-share-alt"></i>
+                    Nəticələri Paylaş
+                </button>
+            </div>
+        </div>
+    </div>
+    
+    <div id="confetti-container"></div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+    <script src="questions.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
